@@ -1,24 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import TextField from '@mui/material/TextField';
-
 import ImageUploading from 'react-images-uploading';
 
 function Addcar() {
     const [images, setImages] = useState([]);
-    const maxNumber = 69;
+    const maxNumber = 1;
 
     const onChange = (imageList, addUpdateIndex) => {
         // data for submit
         setImages(imageList);
     };
+    
     return (
         <>
             <div className="dashboard">
@@ -31,16 +31,16 @@ function Addcar() {
                     </div>
                 </div>
                 <div className="col-xl-9 mx-auto mt-3 title ">
-                    <NavLink to="/" >
+                    <NavLink to="/Dashboard" >
                         Dashboard
                     </NavLink>
-                    <NavLink to="/Vehiclepage" style={{color:'#2A0970'}} >
+                    <NavLink to="/Vehiclepage" style={{ color: '#2A0970' }} >
                         vehicle
                     </NavLink>
                     <NavLink to="/Reminders" >
                         reminders
                     </NavLink>
-                    <NavLink to="/Setup" >
+                    <NavLink to="/User_Info" >
                         User info
                     </NavLink>
                 </div>
@@ -57,8 +57,8 @@ function Addcar() {
                             <TextField id="standard-basic" label="Make" variant="standard" />
                             <TextField id="standard-basic" label="Model" variant="standard" />
                             <div style={{ width: '95%', display: 'flex', gap: '5%', color: '#1C85D0' }}>
-                                <TextField id="standard-basic" label="Year" variant="standard" style={{width:'200px'}}/>
-                                <TextField id="standard-basic" label="Vehicle No" variant="standard" style={{width:'200px'}} />
+                                <TextField id="standard-basic" label="Year" variant="standard" style={{ width: '200px' }} />
+                                <TextField id="standard-basic" label="Vehicle No" variant="standard" style={{ width: '200px' }} />
                             </div>
                             <TextField id="standard-basic" style={{ color: '#1C85D0' }} label="chasis No" variant="standard" />
                         </Box>
@@ -103,7 +103,7 @@ function Addcar() {
                                         {imageList.map((image, index) => (
                                             <div key={index} className="image-item" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                                                 <img src={image['data_url']} id='carpic' alt="" />
-                                                
+
                                             </div>
                                         ))}
                                     </div>

@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-// import { useState } from 'react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaCog } from 'react-icons/fa';
-
 import TextField from '@mui/material/TextField';
-
 import Box from '@mui/material/Box';
-
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 function Remindes() {
@@ -47,17 +41,19 @@ function Remindes() {
                     </div>
                 </div>
                 <div className="col-xl-9 mx-auto mt-3 title ">
-                    <NavLink to="/" activeClassName="active" >
+                    {/* <Navbar/> */}
+                    
+                   <NavLink to="/Dashboard" >
                         Dashboard
                     </NavLink>
-                    <NavLink to="/Vehiclepage" activeClassName="active" >
+                    <NavLink to="/Vehiclepage"  >
                         vehicle
                     </NavLink>
-                    <NavLink to="/Reminders" activeClassName="active" style={{ color: 'blue' }}>
+                    <NavLink to="/Reminders" style={{color:'#2A0970'}}>
                         reminders
                     </NavLink>
-                    <NavLink to="/Setup" activeClassName="active">
-                    User info
+                    <NavLink to="/User_Info" >
+                        User info
                     </NavLink>
                 </div>
                 <div className="col-xl-9 mx-auto btnholder">

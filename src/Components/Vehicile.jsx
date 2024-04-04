@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Navbar from './Navbar'
 function Vehicile() {
 
     let counter = 0
@@ -18,7 +19,7 @@ function Vehicile() {
     // Temporary delete
     const delx = () => {
         let del = document.getElementById("mainbox")
-        // alert('hello')
+       
         if (del) {
             del.style.display = "none"
         }
@@ -36,18 +37,8 @@ function Vehicile() {
                 </div>
 
                 <div className="col-xl-9 mx-auto mt-3 title ">
-                    <NavLink to="/" activeClassName="active" >
-                        Dashboard
-                    </NavLink>
-                    <NavLink to="/Vehiclepage" activeClassName="active" style={{ color: 'blue' }}>
-                        vehicle
-                    </NavLink>
-                    <NavLink to="/Reminders" activeClassName="active">
-                        reminders
-                    </NavLink>
-                    <NavLink to="/Setup" activeClassName="active">
-                        User info
-                    </NavLink>
+                    <Navbar/>
+                    
                 </div>
                 <div className="col-xl-9 mx-auto" style={{ display: 'flex', justifyContent: 'end' }}>
                     <div className="add">

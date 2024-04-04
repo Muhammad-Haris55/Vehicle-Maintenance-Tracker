@@ -14,7 +14,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 
 import DatePicker from "react-datepicker";
-
+import Navbar from './Navbar';
 import "react-datepicker/dist/react-datepicker.css";
 
 import Modal from '../Modal';
@@ -56,17 +56,18 @@ function Documentation() {
                     </div>
                 </div>
                 <div className="col-xl-9 mx-auto mt-3 title ">
-                    <NavLink to="/" activeClassName="active" >
+                   
+                   <NavLink to="/Dashboard" >
                         Dashboard
                     </NavLink>
-                    <NavLink to="/Vehiclepage" activeClassName="active" >
+                    <NavLink to="/Vehiclepage"  >
                         vehicle
                     </NavLink>
-                    <NavLink to="/Reminders" activeClassName="active" style={{ color: '#2A0970' }}>
+                    <NavLink to="/Reminders" style={{color:'#2A0970'}}>
                         reminders
                     </NavLink>
-                    <NavLink to="/Setup" activeClassName="active">
-                    User info
+                    <NavLink to="/User_Info" >
+                        User info
                     </NavLink>
                 </div>
                 <div className="col-xl-9 mx-auto btnholder">
