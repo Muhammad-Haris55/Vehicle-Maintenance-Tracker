@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Dashboard from "./Components/Dashboard";
+import Vehicile from "./Components/Vehicile";
+import Remindes from "./Components/Remindes";
+import Setup from "./Components/Setup";
+import Addcar from "./Components/Addcar";
+import Documentation from "./Components/Documentation";
+import { Routes, Route, useRoutes, } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* useRoutes(['/Reminders', '/Engine oil'].map(path => ({"/", { Remindes }}))) */}
+      <Routes>
+        {["/Reminders", "/Engine_oil", "/Fuel_filter","/Spark_plugs","/Battery","/Timing_belt","/Tire_rotation","/Wheel_alignment","/Fuel_filter","/Air_filter","/Cabin_filter"].map((path, index) => 
+        <Route path={path} element={<Remindes/>} key={index} />
+    )}
+    {["/Documentation","/VEHICLE_INSURANCE","/ECO_TEST","/VEHICLE_BOOK","/DRIVEN_LISCENE"].map((path,index)=>
+      <Route path={path} element={<Documentation/>}></Route>
+    )}
+        <Route path="/" element={<Dashboard />}></Route>
+      
+        <Route path="/Vehiclepage" element={<Vehicile />}></Route>
+        <Route path="/Setup" element={<Setup />}></Route>
+        <Route path="/Add" element={<Addcar />}></Route>
+        {/* <Route path="/Documentaion" element={<Documentation />}></Route> */}
+      </Routes>
+      {/* <Dashboard/> */}
+
+    </>
   );
 }
 
